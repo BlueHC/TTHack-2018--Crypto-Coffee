@@ -1,0 +1,974 @@
+[
+    {
+        "id": "b89bdda1.9bb8d",
+        "type": "tab",
+        "label": "Stepper",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "78d950c0.d1aa6",
+        "type": "tab",
+        "label": "RestTriggerCoffee",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c942b8ef.aa01f8",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e4c932dc.0c809",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard"
+    },
+    {
+        "id": "d2444bf3.ab2be8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Departments",
+        "tab": "e4c932dc.0c809",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "fbed65a2.523d78",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "3cabd753.07d958",
+        "type": "ui_group",
+        "z": "",
+        "name": "Hackbard",
+        "tab": "e4c932dc.0c809",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9fbcf18c.c7271",
+        "type": "ui_group",
+        "z": "",
+        "name": "Everyone",
+        "tab": "e4c932dc.0c809",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "16e54252.7a77ee",
+        "type": "rpi-gpio in",
+        "z": "b89bdda1.9bb8d",
+        "name": "10 Steps",
+        "pin": "16",
+        "intype": "up",
+        "debounce": "50",
+        "read": true,
+        "x": 181.52979278564453,
+        "y": 73.50523281097412,
+        "wires": [
+            [
+                "1c0ba2ce.cea7fd"
+            ]
+        ]
+    },
+    {
+        "id": "2402690a.68cce6",
+        "type": "rpi-gpio in",
+        "z": "b89bdda1.9bb8d",
+        "name": "100 Steps",
+        "pin": "18",
+        "intype": "up",
+        "debounce": "50",
+        "read": false,
+        "x": 180.53600311279297,
+        "y": 186.3472023010254,
+        "wires": [
+            [
+                "8a64af53.dc02f"
+            ]
+        ]
+    },
+    {
+        "id": "c07ddbc2.1bbce8",
+        "type": "http in",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "url": "/getMySteps",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240.5437240600586,
+        "y": 172.22126388549805,
+        "wires": [
+            [
+                "9c5baaa4.0b26d8",
+                "66abeea6.f3b3f"
+            ]
+        ]
+    },
+    {
+        "id": "ae882004.ffd52",
+        "type": "http response",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 750.5354309082031,
+        "y": 198.2212677001953,
+        "wires": []
+    },
+    {
+        "id": "9c5baaa4.0b26d8",
+        "type": "function",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "func": "ldap = global.get(\"ldap\");\n\nmsg.payload = ldap[msg.payload.id] || 0;\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 505.55199432373047,
+        "y": 245.1118278503418,
+        "wires": [
+            [
+                "ae882004.ffd52"
+            ]
+        ]
+    },
+    {
+        "id": "f3b6b975.9a3298",
+        "type": "http in",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "url": "/makeMeACoffee",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 162.54443359375,
+        "y": 388.20660972595215,
+        "wires": [
+            [
+                "e8ce77d8.bc6aa8"
+            ]
+        ]
+    },
+    {
+        "id": "c08dbbad.417af8",
+        "type": "http response",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 555.5294876098633,
+        "y": 393.23023796081543,
+        "wires": []
+    },
+    {
+        "id": "66abeea6.f3b3f",
+        "type": "debug",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 512.5440254211426,
+        "y": 72.3781852722168,
+        "wires": []
+    },
+    {
+        "id": "c76388b3.a41ac8",
+        "type": "http request",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://192.168.178.81:1880/makeCoffee",
+        "tls": "",
+        "x": 725.0307960510254,
+        "y": 343.05686378479004,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "26f68e4f.4ece42",
+        "type": "link out",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "links": [
+            "d7a24af6.7d8ae8"
+        ],
+        "x": 848.5408086776733,
+        "y": 315.31325912475586,
+        "wires": []
+    },
+    {
+        "id": "d7a24af6.7d8ae8",
+        "type": "link in",
+        "z": "c942b8ef.aa01f8",
+        "name": "Dashboard",
+        "links": [
+            "26f68e4f.4ece42",
+            "a9e5162a.5407e8"
+        ],
+        "x": 28.550277709960938,
+        "y": 553.3081426620483,
+        "wires": [
+            [
+                "8334b596.d80168",
+                "800f9552.11e6f8",
+                "fd04afc3.0a606",
+                "99cba3a2.972f5",
+                "cd8b6f9e.e67ac"
+            ]
+        ]
+    },
+    {
+        "id": "a9e5162a.5407e8",
+        "type": "link out",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "links": [
+            "d7a24af6.7d8ae8"
+        ],
+        "x": 525.5375938415527,
+        "y": 443.3201713562012,
+        "wires": []
+    },
+    {
+        "id": "435de07a.a3daf",
+        "type": "ui_gauge",
+        "z": "c942b8ef.aa01f8",
+        "name": "ME",
+        "group": "3cabd753.07d958",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Me",
+        "label": "Steps",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 398.5290412902832,
+        "y": 135.04579067230225,
+        "wires": []
+    },
+    {
+        "id": "1c0ba2ce.cea7fd",
+        "type": "switch",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 342.54297637939453,
+        "y": 79.32995223999023,
+        "wires": [
+            [
+                "eee7ff8b.661f1"
+            ]
+        ]
+    },
+    {
+        "id": "8a64af53.dc02f",
+        "type": "switch",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 348.5309410095215,
+        "y": 183.34439849853516,
+        "wires": [
+            [
+                "c0f01a91.18cc08"
+            ]
+        ]
+    },
+    {
+        "id": "b633992f.a7bc78",
+        "type": "random",
+        "z": "b89bdda1.9bb8d",
+        "name": "User",
+        "low": "1",
+        "high": "22",
+        "inte": "true",
+        "property": "user",
+        "x": 300.53414154052734,
+        "y": 435.3930149078369,
+        "wires": [
+            [
+                "f9f9cb94.2e72a8"
+            ]
+        ]
+    },
+    {
+        "id": "b6dee839.ff8668",
+        "type": "inject",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 138.53848266601562,
+        "y": 425.44065856933594,
+        "wires": [
+            [
+                "b633992f.a7bc78"
+            ]
+        ]
+    },
+    {
+        "id": "8eaa876d.1a6b78",
+        "type": "debug",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 936.5304145812988,
+        "y": 380.3738250732422,
+        "wires": []
+    },
+    {
+        "id": "f9f9cb94.2e72a8",
+        "type": "random",
+        "z": "b89bdda1.9bb8d",
+        "name": "Steps",
+        "low": "1",
+        "high": "100",
+        "inte": "true",
+        "property": "steps",
+        "x": 479.5446243286133,
+        "y": 443.4050521850586,
+        "wires": [
+            [
+                "5586abcc.506ee4"
+            ]
+        ]
+    },
+    {
+        "id": "5586abcc.506ee4",
+        "type": "function",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "func": "ldap = global.get(\"ldap\") || [100];\n\nsteps = ldap[msg.user] || 0;\n\nldap[msg.user] = steps + msg.steps;\n\nglobal.set(\"ldap\", ldap);\n\nmsg.payload = ldap;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 714.5507888793945,
+        "y": 408.29408168792725,
+        "wires": [
+            [
+                "8eaa876d.1a6b78",
+                "26f68e4f.4ece42"
+            ]
+        ]
+    },
+    {
+        "id": "eee7ff8b.661f1",
+        "type": "change",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "steps",
+                "pt": "msg",
+                "to": "10",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540.5307235717773,
+        "y": 79.78898239135742,
+        "wires": [
+            [
+                "9c4c7e24.5e5cf"
+            ]
+        ]
+    },
+    {
+        "id": "c0f01a91.18cc08",
+        "type": "change",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "steps",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 559.5358085632324,
+        "y": 181.8074140548706,
+        "wires": [
+            [
+                "9c4c7e24.5e5cf"
+            ]
+        ]
+    },
+    {
+        "id": "9c4c7e24.5e5cf",
+        "type": "change",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "user",
+                "pt": "msg",
+                "to": "23",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760.5468254089355,
+        "y": 123.80311012268066,
+        "wires": [
+            [
+                "5586abcc.506ee4"
+            ]
+        ]
+    },
+    {
+        "id": "b0af56f5.ce9a88",
+        "type": "change",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ldap",
+                "pt": "global",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 522.5362243652344,
+        "y": 599.8025360107422,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3a1bdb.9effc426",
+        "type": "inject",
+        "z": "b89bdda1.9bb8d",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 226.534912109375,
+        "y": 590.4415740966797,
+        "wires": [
+            [
+                "b0af56f5.ce9a88"
+            ]
+        ]
+    },
+    {
+        "id": "e8ce77d8.bc6aa8",
+        "type": "function",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "func": "user  = msg.payload.id;\nldap  = global.get(\"ldap\");\nsteps = ldap[user] || 0; \n\nif (steps >= 800){\n    msg.payload = 100;\n    steps = steps - 800;\n    ldap[user] = steps;\n    global.set(\"ldap\", ldap);\n}else{\n    msg.payload = 418;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 361.5519599914551,
+        "y": 395.7873249053955,
+        "wires": [
+            [
+                "a9e5162a.5407e8",
+                "c08dbbad.417af8",
+                "837ca2cc.4c0e"
+            ]
+        ]
+    },
+    {
+        "id": "837ca2cc.4c0e",
+        "type": "switch",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "100",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 547.5414123535156,
+        "y": 343.46809482574463,
+        "wires": [
+            [
+                "c76388b3.a41ac8"
+            ]
+        ]
+    },
+    {
+        "id": "2e46eca3.26c3b4",
+        "type": "ui_chart",
+        "z": "c942b8ef.aa01f8",
+        "name": "Everyone",
+        "group": "9fbcf18c.c7271",
+        "order": 1,
+        "width": "6",
+        "height": "14",
+        "label": "Everyone",
+        "chartType": "horizontalBar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 408.5452003479004,
+        "y": 72.01274490356445,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8334b596.d80168",
+        "type": "function",
+        "z": "c942b8ef.aa01f8",
+        "name": "",
+        "func": "ldap = global.get(\"ldap\") || [];\n\nvar outputMsgs = [];\n\nfor (i=0; i < ldap.length; i++){\n    outputMsgs.push({topic:i, payload : ldap[i]});\n}\n\nreturn [ outputMsgs ];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 186.54183959960938,
+        "y": 72.43877029418945,
+        "wires": [
+            [
+                "2e46eca3.26c3b4"
+            ]
+        ]
+    },
+    {
+        "id": "800f9552.11e6f8",
+        "type": "function",
+        "z": "c942b8ef.aa01f8",
+        "name": "",
+        "func": "ldap = global.get(\"ldap\") || [];\nsteps = ldap[23];\nmsg.payload = steps;\ndelete msg.topic; \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 191.54672241210938,
+        "y": 131.44481086730957,
+        "wires": [
+            [
+                "435de07a.a3daf",
+                "8c4c9732.859e78"
+            ]
+        ]
+    },
+    {
+        "id": "fd04afc3.0a606",
+        "type": "function",
+        "z": "c942b8ef.aa01f8",
+        "name": "",
+        "func": "ldap = global.get(\"ldap\") || [];\n\nsteps = 0;\n\nfor (i = 0; i < 7; i++){\n    s = ldap[i] || 0;\n    steps = steps + s;\n}\n\nmsg.payload = steps;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 191.53115844726562,
+        "y": 208.4502410888672,
+        "wires": [
+            [
+                "8712b268.1420b"
+            ]
+        ]
+    },
+    {
+        "id": "8712b268.1420b",
+        "type": "ui_gauge",
+        "z": "c942b8ef.aa01f8",
+        "name": "Dep A",
+        "group": "d2444bf3.ab2be8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Department A",
+        "label": "steps",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 395.5476379394531,
+        "y": 213.04859924316406,
+        "wires": []
+    },
+    {
+        "id": "2ba72031.90ccd",
+        "type": "ui_gauge",
+        "z": "c942b8ef.aa01f8",
+        "name": "Dep B",
+        "group": "d2444bf3.ab2be8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Department B",
+        "label": "steps",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 397.5418395996094,
+        "y": 269.04991149902344,
+        "wires": []
+    },
+    {
+        "id": "645b5282.0f737c",
+        "type": "ui_gauge",
+        "z": "c942b8ef.aa01f8",
+        "name": "Dep C",
+        "group": "d2444bf3.ab2be8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Department C",
+        "label": "steps",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 400.5448303222656,
+        "y": 322.04823303222656,
+        "wires": []
+    },
+    {
+        "id": "cd8b6f9e.e67ac",
+        "type": "function",
+        "z": "c942b8ef.aa01f8",
+        "name": "",
+        "func": "ldap = global.get(\"ldap\") || [];\n\nsteps = 0;\n\nfor (i = 14; i < 24; i++){\n    s = ldap[i] || 0;\n    steps = steps + s;\n}\n\nmsg.payload = steps;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 198.03097915649414,
+        "y": 341.05688858032227,
+        "wires": [
+            [
+                "645b5282.0f737c"
+            ]
+        ]
+    },
+    {
+        "id": "99cba3a2.972f5",
+        "type": "function",
+        "z": "c942b8ef.aa01f8",
+        "name": "",
+        "func": "ldap = global.get(\"ldap\") || [];\n\nsteps = 0;\n\nfor (i = 7; i < 14; i++){\n    s = ldap[i] || 0;\n    steps = steps + s;\n}\n\nmsg.payload = steps;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 202.03097534179688,
+        "y": 286.05688762664795,
+        "wires": [
+            [
+                "2ba72031.90ccd"
+            ]
+        ]
+    },
+    {
+        "id": "8c4c9732.859e78",
+        "type": "ui_chart",
+        "z": "c942b8ef.aa01f8",
+        "name": "",
+        "group": "3cabd753.07d958",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "History",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 413.5478210449219,
+        "y": 176.0037384033203,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f487994e.68d598",
+        "type": "function",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "func": "user  = msg.user;\nldap  = global.get(\"ldap\");\nsteps = ldap[user] || 0; \n\nif (steps >= 800){\n    msg.payload = 100;\n    steps = steps - 800;\n    ldap[user] = steps;\n    global.set(\"ldap\", ldap);\n}else{\n    msg.payload = 418;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 528.0309371948242,
+        "y": 586.0569019317627,
+        "wires": [
+            [
+                "a4a973a4.9a835"
+            ]
+        ]
+    },
+    {
+        "id": "ec3704b5.fff6d8",
+        "type": "random",
+        "z": "78d950c0.d1aa6",
+        "name": "user",
+        "low": "1",
+        "high": "22",
+        "inte": "true",
+        "property": "user",
+        "x": 317.53808212280273,
+        "y": 575.4067325592041,
+        "wires": [
+            [
+                "f487994e.68d598"
+            ]
+        ]
+    },
+    {
+        "id": "ef7b3bf9.b72a18",
+        "type": "inject",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150.55047607421875,
+        "y": 506.4513397216797,
+        "wires": [
+            [
+                "ec3704b5.fff6d8"
+            ]
+        ]
+    },
+    {
+        "id": "a4a973a4.9a835",
+        "type": "debug",
+        "z": "78d950c0.d1aa6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 706.5461730957031,
+        "y": 546.3819427490234,
+        "wires": []
+    }
+]
